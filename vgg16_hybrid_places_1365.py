@@ -1,9 +1,7 @@
 # -*- coding: utf-8 -*-
 '''VGG-ImageNetPlaces365-hybrid model for Keras
-
 1000 classes from the ImageNet and the 365 classes from
 the Places365-Standard were merged to train a VGG16-based model (Hybrid1365-VGG)
-
 # Reference:
 - [Places: A 10 million Image Database for Scene Recognition](http://places2.csail.mit.edu/PAMI_places.pdf)
 '''
@@ -23,7 +21,7 @@ from keras.regularizers import l2
 from keras.layers.core import Dropout
 from keras.layers import GlobalAveragePooling2D
 from keras.layers import GlobalMaxPooling2D
-from keras.applications.imagenet_utils import _obtain_input_shape
+from keras_applications.imagenet_utils import _obtain_input_shape
 from keras.engine.topology import get_source_inputs
 from keras.utils.data_utils import get_file
 from keras.utils import layer_utils
@@ -38,18 +36,15 @@ def VGG16_Hybrid_1365(include_top=True, weights='places',
                       pooling=None,
                       classes=1365):
     """Instantiates the VGG-ImageNetPlaces365-hybrid architecture.
-
     Optionally loads weights pre-trained
     on Places. Note that when using TensorFlow,
     for best performance you should set
     `image_data_format="channels_last"` in your Keras config
     at ~/.keras/keras.json.
-
     The model and the weights are compatible with both
     TensorFlow and Theano. The data format
     convention used by the model is the one
     specified in your Keras config file.
-
     # Arguments
         include_top: whether to include the 3 fully-connected
             layers at the top of the network.
@@ -319,4 +314,3 @@ if __name__ == '__main__':
     # patio, terrace
     # food_court
     # cafeteria
-
